@@ -1,23 +1,22 @@
 public class Main {
     public static void main(String[] args) {
-        DepositService serviceD = new DepositService();
-        int deposit = serviceD.calculate(1000, 3);
+        BankService service = new BankService();
+        int deposit = service.deposit (1000, 3);
 
-        CashbackService serviceC = new CashbackService();
-        int regular = serviceC.regular(1000,1);
-        int high = serviceC.high(1000, 5);
-        int special = serviceC.special(1000, 30);
+        int cashback = service.cashback (
+                1_000,
+                1_000,
+                1_000,
+                1,
+                5,
+                30);
 
-        int cashback = regular + high + special;
-
-        int cashbackLimit = 3000;
+        int cashbackLimit = 3_000;
         if (cashback > cashbackLimit) {
             cashback = cashbackLimit;
         }
 
         System.out.println(deposit);
         System.out.println(cashback);
-
-
     }
 }
