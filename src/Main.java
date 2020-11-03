@@ -4,9 +4,9 @@ public class Main {
         int deposit = service.deposit (1000, 3);
 
         int cashback = service.cashback (
-                1_000,
-                1_000,
-                1_000,
+                2_000,
+                2_000,
+                2_000,
                 1,
                 5,
                 30);
